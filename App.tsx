@@ -4,7 +4,7 @@ import Hero from './components/Hero';
 import HowItWorks from './components/HowItWorks';
 import Features from './components/Features';
 import Screenshots from './components/Screenshots';
-import CommunityWall from './components/CommunityWall';
+import WhyLabelSafe from './components/WhyLabelSafe';
 import Privacy from './components/Privacy';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
@@ -44,7 +44,7 @@ const App: React.FC = () => {
         <HowItWorks />
         <Features />
         <Screenshots />
-        <CommunityWall />
+        <WhyLabelSafe />
         <Privacy />
         <CTA />
       </main>
