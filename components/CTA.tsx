@@ -11,10 +11,10 @@ const CTA: React.FC = () => {
       if (email) {
          setIsLoading(true);
 
-         const sheetUrl = import.meta.env.VITE_GOOGLE_SHEET_URL;
+         const waitlistUrl = import.meta.env.VITE_WAITLIST_URL;
 
-         if (!sheetUrl) {
-            console.warn("VITE_GOOGLE_SHEET_URL is not set. Simulating submission.");
+         if (!waitlistUrl) {
+            console.warn("VITE_WAITLIST_URL is not set. Simulating submission.");
             // Simulate network request
             await new Promise(resolve => setTimeout(resolve, 1500));
             setIsLoading(false);
@@ -23,23 +23,25 @@ const CTA: React.FC = () => {
          }
 
          try {
-            // We use mode: 'no-cors' to avoid CORS issues with Google Apps Script
-            // This means we won't get a readable response, but the data will be sent.
-            await fetch(sheetUrl, {
+            const response = await fetch(waitlistUrl, {
                method: 'POST',
-               mode: 'no-cors',
                headers: {
-                  'Content-Type': 'text/plain', // Avoids preflight OPTIONS
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
                },
                body: JSON.stringify({ email })
             });
 
-            setSubmitted(true);
+            if (response.ok) {
+               setSubmitted(true);
+            } else {
+               const data = await response.json().catch(() => ({}));
+               console.error("Submission failed", data);
+               alert("Something went wrong. Please try again.");
+            }
          } catch (error) {
             console.error("Error submitting to waitlist:", error);
-            // In a real app we might show an error state, but for now we fallback
-            // or just alert. Since no-cors hides errors, this catch is for network failures.
-            alert("There was an issue joining the waitlist. Please try again.");
+            alert("There was an issue joining the waitlist. Please check your connection.");
          } finally {
             setIsLoading(false);
          }
