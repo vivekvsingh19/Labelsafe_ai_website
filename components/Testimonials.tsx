@@ -4,25 +4,22 @@ import { Star, Quote } from 'lucide-react';
 const Testimonials: React.FC = () => {
   const testimonials = [
     {
-      quote: "I used to be confused by 'natural flavors' and chemical names. LabelSafe tells me exactly what they are and if I should worry. It's a game changer.",
-      name: "Sarah Jenkins",
-      title: "Beta Tester",
-      initials: "SJ",
-      color: "bg-purple-500",
+      quote: "Keeping ultra-processed foods away from my family is a priority. LabelSafe makes it instant and easy to scan everything before it goes in the cart. No more guessing.",
+      name: "Maria Torres",
+      initials: "MT",
+      color: "bg-terracotta",
       delay: "0"
     },
     {
-      quote: "As a health-conscious dad, I want to keep ultra-processed foods out of my house. This app makes it instant and easy to check everything before it goes in the cart.",
-      name: "Arjun Mehta",
-      title: "Parent",
-      initials: "AM",
-      color: "bg-terracotta",
+      quote: "I wanted to eat cleaner but chemistry labels were overwhelming. This app simplifies everything—I finally know what I'm actually putting in my body.",
+      name: "Sarah Jenkins",
+      initials: "SJ",
+      color: "bg-purple-500",
       delay: "100"
     },
     {
-      quote: "Finally, a food scanner that focuses on health quality, not just calories. It's helped me lower my inflammation significantly.",
+      quote: "Most apps purely count calories. LabelSafe identifies the inflammatory ingredients that actually impact metabolic health. It is an essential tool for my patients.",
       name: "Dr. Emily Ross",
-      title: "Functional Medicine",
       initials: "ER",
       color: "bg-blue-500",
       delay: "200"
@@ -64,7 +61,6 @@ const Testimonials: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-white text-base">{item.name}</h4>
-                  <p className="text-xs font-medium text-gray-500 uppercase tracking-widest">{item.title}</p>
                 </div>
               </div>
             </div>
