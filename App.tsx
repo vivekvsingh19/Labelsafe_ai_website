@@ -6,6 +6,7 @@ import Features from './components/Features';
 import Screenshots from './components/Screenshots';
 import WhyLabelSafe from './components/WhyLabelSafe';
 import Privacy from './components/Privacy';
+import Testimonials from './components/Testimonials';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import Modal from './components/Modal';
@@ -46,10 +47,11 @@ const App: React.FC = () => {
         <Screenshots />
         <WhyLabelSafe />
         <Privacy />
+        <Testimonials />
         <CTA />
       </main>
       <Footer onOpenModal={setModalType} />
-      
+
       {modalType && (
         <Modal type={modalType} onClose={() => setModalType(null)} />
       )}
