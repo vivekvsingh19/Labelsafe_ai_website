@@ -4,9 +4,8 @@ import Hero from './components/Hero';
 import HowItWorks from './components/HowItWorks';
 import Features from './components/Features';
 import Screenshots from './components/Screenshots';
-import WhyLabelSafe from './components/WhyLabelSafe';
+import CommunityWall from './components/CommunityWall';
 import Privacy from './components/Privacy';
-import Testimonials from './components/Testimonials';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import Modal from './components/Modal';
@@ -45,9 +44,8 @@ const App: React.FC = () => {
         <HowItWorks />
         <Features />
         <Screenshots />
-        <WhyLabelSafe />
+        <CommunityWall />
         <Privacy />
-        <Testimonials />
         <CTA />
       </main>
       <Footer onOpenModal={setModalType} />
