@@ -1,116 +1,137 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>LabelSafe AI: Check food safety in seconds</title>
-    <meta name="description" content="Mindful food analysis." />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              serif: ['DM Serif Display', 'serif'],
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LabelSafe AI: Check food safety in seconds</title>
+  <meta name="description" content="Mindful food analysis." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://labelsafeai.vivekvsingh.me/" />
+  <meta property="og:title" content="LabelSafe AI: Check food safety in seconds" />
+  <meta property="og:description" content="Mindful food analysis. Check food safety in seconds." />
+  <meta property="og:image" content="https://labelsafeai.vivekvsingh.me/preview.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://labelsafeai.vivekvsingh.me/" />
+  <meta name="twitter:title" content="LabelSafe AI: Check food safety in seconds" />
+  <meta name="twitter:description" content="Mindful food analysis. Check food safety in seconds." />
+  <meta name="twitter:image" content="https://labelsafeai.vivekvsingh.me/preview.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['DM Serif Display', 'serif'],
+          },
+          colors: {
+            background: 'var(--bg-main)',
+            surface: 'var(--bg-surface)',
+            terracotta: '#CF7556',
+            black: '#111111',
+            primary: 'var(--text-primary)',
+            secondary: 'var(--text-secondary)',
+            border: 'var(--border-color)',
+          },
+          animation: {
+            'float': "float 8s ease-in-out infinite",
+            'fade-in': "fadeIn 1s ease-out forwards",
+            'slide-up': "slideUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards",
+            'pulse-slow': "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+            'marquee': "marquee 60s linear infinite",
+            'scan-vertical': "scanVertical 3s ease-in-out infinite",
+          },
+          keyframes: {
+            float: {
+              "0%, 100%": { transform: "translateY(0)" },
+              "50%": { transform: "translateY(-15px)" },
             },
-            colors: {
-              background: 'var(--bg-main)',
-              surface: 'var(--bg-surface)',
-              terracotta: '#CF7556',
-              black: '#111111',
-              primary: 'var(--text-primary)',
-              secondary: 'var(--text-secondary)',
-              border: 'var(--border-color)',
+            fadeIn: {
+              "0%": { opacity: 0 },
+              "100%": { opacity: 1 },
             },
-            animation: {
-              'float': "float 8s ease-in-out infinite",
-              'fade-in': "fadeIn 1s ease-out forwards",
-              'slide-up': "slideUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards",
-              'pulse-slow': "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-              'marquee': "marquee 60s linear infinite",
-              'scan-vertical': "scanVertical 3s ease-in-out infinite",
+            slideUp: {
+              "0%": { opacity: 0, transform: "translateY(40px)" },
+              "100%": { opacity: 1, transform: "translateY(0)" },
             },
-            keyframes: {
-              float: {
-                "0%, 100%": { transform: "translateY(0)" },
-                "50%": { transform: "translateY(-15px)" },
-              },
-              fadeIn: {
-                "0%": { opacity: 0 },
-                "100%": { opacity: 1 },
-              },
-              slideUp: {
-                "0%": { opacity: 0, transform: "translateY(40px)" },
-                "100%": { opacity: 1, transform: "translateY(0)" },
-              },
-              marquee: {
-                "0%": { transform: "translateX(0%)" },
-                "100%": { transform: "translateX(-100%)" },
-              },
-              scanVertical: {
-                "0%": { top: "-20%" },
-                "50%": { top: "120%" },
-                "100%": { top: "-20%" },
-              }
+            marquee: {
+              "0%": { transform: "translateX(0%)" },
+              "100%": { transform: "translateX(-100%)" },
+            },
+            scanVertical: {
+              "0%": { top: "-20%" },
+              "50%": { top: "120%" },
+              "100%": { top: "-20%" },
             }
           }
         }
       }
-    </script>
-    <style>
-      :root {
-        --bg-main: #FFFFFF;
-        --bg-surface: #F9F9F9;
-        --text-primary: #111111;
-        --text-secondary: #666666;
-        --border-color: #E5E5E5;
-      }
+    }
+  </script>
+  <style>
+    :root {
+      --bg-main: #FFFFFF;
+      --bg-surface: #F9F9F9;
+      --text-primary: #111111;
+      --text-secondary: #666666;
+      --border-color: #E5E5E5;
+    }
 
-      body {
-        background-color: var(--bg-main);
-        color: var(--text-primary);
-        -webkit-font-smoothing: antialiased;
-      }
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+    }
 
-      ::-webkit-scrollbar {
-        width: 6px;
-      }
-      ::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #CCCCCC;
-        border-radius: 3px;
-      }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
 
-      .bento-card {
-        background-color: #FFFFFF;
-        border: 1px solid #F0F0F0;
-        transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-      .bento-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.05);
-        border-color: #E0E0E0;
-      }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
 
-      .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-      }
-      .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-      }
+    ::-webkit-scrollbar-thumb {
+      background: #CCCCCC;
+      border-radius: 3px;
+    }
 
-      ::selection {
-        background: #F0F0F0;
-        color: #111111;
-      }
-    </style>
+    .bento-card {
+      background-color: #FFFFFF;
+      border: 1px solid #F0F0F0;
+      transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .bento-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
+      border-color: #E0E0E0;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    ::selection {
+      background: #F0F0F0;
+      color: #111111;
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -121,10 +142,12 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
-    <div id="root"></div>
+
+<body>
+  <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>
