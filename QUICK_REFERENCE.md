@@ -5,7 +5,7 @@
 ```
 NEW COMPONENTS (3)
 ├── pages/PrivacyPolicy.tsx      450+ lines, app-store ready
-├── pages/TermsOfService.tsx     400+ lines, legally structured  
+├── pages/TermsOfService.tsx     400+ lines, legally structured
 └── pages/HomePage.tsx           Refactored home page
 
 NEW DOCUMENTATION (4)
