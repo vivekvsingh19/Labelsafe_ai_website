@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import HowItWorks from '../components/HowItWorks';
@@ -8,11 +8,8 @@ import WhyLabelSafe from '../components/WhyLabelSafe';
 import Privacy from '../components/Privacy';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
-import Modal from '../components/Modal';
 
 const HomePage: React.FC = () => {
-  const [modalType, setModalType] = useState<string | null>(null);
-
   // Simple scroll observation for fade-in effects
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,7 +35,7 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden font-sans">
-      <Navbar onOpenModal={setModalType} />
+      <Navbar />
       <main className="flex-grow">
         <Hero />
         <HowItWorks />
@@ -48,11 +45,7 @@ const HomePage: React.FC = () => {
         <Privacy />
         <CTA />
       </main>
-      <Footer onOpenModal={setModalType} />
-
-      {modalType && (
-        <Modal type={modalType} onClose={() => setModalType(null)} />
-      )}
+      <Footer />
     </div>
   );
 };

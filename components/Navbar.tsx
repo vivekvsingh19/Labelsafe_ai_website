@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface NavbarProps {
-  onOpenModal: (type: string) => void;
+  onOpenModal?: (type: string) => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
+const Navbar: React.FC<NavbarProps> = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -19,12 +20,6 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
 
   const scrollToWaitlist = () => {
     document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' });
-    setIsOpen(false);
-  };
-
-  const handlePrivacyClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    onOpenModal('privacy');
     setIsOpen(false);
   };
 
@@ -47,7 +42,7 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
             <div className="hidden md:flex items-center space-x-8">
               <a href="#how-it-works" className="text-sm font-medium text-gray-500 hover:text-black transition-colors">How it Works</a>
               <a href="#features" className="text-sm font-medium text-gray-500 hover:text-black transition-colors">Mission</a>
-              <button onClick={handlePrivacyClick} className="text-sm font-medium text-gray-500 hover:text-black transition-colors">Privacy</button>
+              <Link to="/privacy" className="text-sm font-medium text-gray-500 hover:text-black transition-colors">Privacy</Link>
             </div>
 
             {/* CTA */}
@@ -72,7 +67,7 @@ const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
           <div className="flex flex-col space-y-6 text-center font-serif text-2xl">
             <a onClick={() => setIsOpen(false)} href="#how-it-works" className="text-black hover:text-terracotta transition-colors">How it Works</a>
             <a onClick={() => setIsOpen(false)} href="#features" className="text-black hover:text-terracotta transition-colors">Mission</a>
-            <button onClick={handlePrivacyClick} className="text-black hover:text-terracotta transition-colors">Privacy</button>
+            <Link to="/privacy" onClick={() => setIsOpen(false)} className="text-black hover:text-terracotta transition-colors">Privacy</Link>
             <button onClick={scrollToWaitlist} className="text-black hover:text-terracotta transition-colors">
               Join Waitlist
             </button>

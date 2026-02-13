@@ -2,11 +2,7 @@ import React from 'react';
 import { Github, Twitter, Coffee } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-interface FooterProps {
-  onOpenModal: (type: string) => void;
-}
-
-const Footer: React.FC<FooterProps> = ({ onOpenModal }) => {
+const Footer: React.FC = () => {
   return (
     <footer className="bg-[#111111] py-6 border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
