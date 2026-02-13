@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github, Twitter, Coffee } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface FooterProps {
   onOpenModal: (type: string) => void;
@@ -12,8 +13,8 @@ const Footer: React.FC<FooterProps> = ({ onOpenModal }) => {
 
         {/* Legal Links */}
         <div className="flex gap-6 order-2 md:order-1">
-          <button onClick={() => onOpenModal('privacy')} className="hover:text-white transition-colors">Privacy Policy</button>
-          <button onClick={() => onOpenModal('terms')} className="hover:text-white transition-colors">Terms of Service</button>
+          <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+          <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           <a href="mailto:vivekvsingh19@gmail.com" className="hover:text-white transition-colors">Support</a>
         </div>
 
