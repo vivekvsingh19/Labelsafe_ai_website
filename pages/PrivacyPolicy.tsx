@@ -6,7 +6,7 @@ const PrivacyPolicy: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Subtle Grid Background */}
-      <div className="absolute inset-0 pointer-events-none" 
+      <div className="absolute inset-0 pointer-events-none"
            style={{
                backgroundImage: 'linear-gradient(#f0f0f0 1px, transparent 1px), linear-gradient(90deg, #f0f0f0 1px, transparent 1px)',
                backgroundSize: '40px 40px',
